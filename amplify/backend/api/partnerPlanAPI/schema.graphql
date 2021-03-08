@@ -1,0 +1,14 @@
+
+type PlanTree @model {
+  id: ID!
+  name: String!
+  tree: PlanElement @connection
+}
+
+type PlanElement @model {
+  id: ID!
+  name: String!
+  type: String!
+  parentID: ID!
+  children: PlanElement @connection
+}
